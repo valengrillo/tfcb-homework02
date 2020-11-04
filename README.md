@@ -5,22 +5,15 @@
 While I am doing my homework, I like to have the following snacks:
 
 - Humus, accompanied with:
- - crackers
- - mini carrots
- - sliced bread
+  - crackers
+  - mini carrots
+  - sliced bread
 - Brie cheese, accompanied with:
- - crackers
- - bread
-And my less healthy snacks would be:
-
-- Bubblegum
-- Ice cream
-- Chocolate
-
-- Dashes work just as well
-- And if you have sub points, put two spaces before the dash or star:
-  - Like this
-  - And this
+  - crackers
+  - bread
+- And my less healthy snacks would be:
+  - ice cream
+  - chocolate
 
 However, I am not a fan of insects, and when doing my assignment \#2 and saw the images contained in the GitHub repository, like this one ![hairy insect](https://github.com/valengrillo/tfcb-homework02/images/casent_Camponotus_darwinii .jpg) I LOST MY APPETITE!
 
