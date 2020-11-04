@@ -15,7 +15,7 @@ While I am doing my homework, I like to have the following snacks:
   - ice cream
   - chocolate
 
-However, I am not a fan of insects, and when doing my assignment \#2 and saw the images contained in the GitHub repository, like this one ![hairy insect](https://github.com/valengrillo/tfcb-homework02/images/casent_Camponotus_darwinii .jpg) I LOST MY APPETITE!
+However, I am not a fan of insects, and when doing my assignment \#2 and saw the images contained in the GitHub repository, like this one ![hairy insect](https://github.com/valengrillo/tfcb-homework02/images/casent_Camponotus_darwinii.jpg) I LOST MY APPETITE!
 
 This | is | a | table | header
 --- | --- | --- | --- | ---
