@@ -1,6 +1,6 @@
-#This is a demostration of a Markdown formatted file.
+# This is a demostration of a Markdown formatted file.
 
-##This will be a header of smaller size
+## This will be a header of smaller size
 
 While I am doing my homework, I like to have the following snacks:
 
