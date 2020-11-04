@@ -15,7 +15,11 @@ While I am doing my homework, I like to have the following snacks:
   - ice cream
   - chocolate
 
-However, I am not a fan of insects, and when doing my assignment \#2 and saw the images contained in the GitHub repository, like this ![hairy insect](images/Rhytidoponera_metallica.jpg) I LOST MY APPETITE!
+However, I am not a fan of insects, and when doing my assignment \#2 and saw the images contained in the GitHub repository, like this:
+
+ ![hairy insect](images/Rhytidoponera_metallica.jpg) 
+
+**AND I LOST MY APPETITE!** (not really, I am just being dramatic)
 
 This | is | a | table | header
 --- | --- | --- | --- | ---
