@@ -21,6 +21,9 @@ However, I am not a fan of insects, and when doing my assignment \#2 and saw the
 
 **AND I LOST MY APPETITE!** (not really, I am just being dramatic)
 
+Anyway, this is how you make a table using Markdown:
+
+
 This | is | a | table | header
 --- | --- | --- | --- | ---
 Humus | crackers| Brie cheese|mini carrots| ice cream
