@@ -23,4 +23,3 @@ This | is | a | table | header
 --- | --- | --- | --- | ---
 Humus | crackers| Brie cheese|mini carrots| ice cream
 1 | 2 | 3 | 4|5
-tables in this readme
