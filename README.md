@@ -19,7 +19,7 @@ However, I am not a fan of insects, and when doing my assignment \#2 and seeing 
 
  ![hairy insect](images/Rhytidoponera_metallica.jpg) 
 
-**AND I LOST MY APPETITE!** (not really, I am just being dramatic)
+**I LOST MY APPETITE!** (not really, I am just being dramatic)
 
 Anyway, this is how you make a table using Markdown:
 
