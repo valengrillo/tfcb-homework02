@@ -1,5 +1,4 @@
-species	sex	weight	collection year				collection month collection 
-day	plot	fields season					
+species	sex	weight	collection_year collection_month collection_day plot fields_season					
 DM	M	40	2014	1	9	1	2014
 DM	F	36	2014	1	9	1	2014
 DM	F	51	2014	3	13	1	2014
