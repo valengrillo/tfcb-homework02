@@ -15,7 +15,7 @@ While I am doing my homework, I like to have the following snacks:
   - ice cream
   - chocolate
 
-However, I am not a fan of insects, and when doing my assignment \#2 and saw the images contained in the GitHub repository, like this:
+However, I am not a fan of insects, and when doing my assignment \#2 and seeing the images contained in the GitHub repository, like this:
 
  ![hairy insect](images/Rhytidoponera_metallica.jpg) 
 
