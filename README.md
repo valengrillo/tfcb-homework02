@@ -2,29 +2,7 @@
 
 ## This will be a header of smaller size
 
-While I am doing my homework, I like to have the following snacks:
-
-- Humus, accompanied with:
-  - crackers
-  - mini carrots
-  - sliced bread
-- Brie cheese, accompanied with:
-  - crackers
-  - bread
-- And my less healthy snacks would be:
-  - ice cream
-  - chocolate
-
-However, I am not a fan of insects, and when doing my assignment \#2 and seeing the images contained in the GitHub repository, like this:
-
- ![hairy insect](images/Rhytidoponera_metallica.jpg) 
-
-**I LOST MY APPETITE!** (not really, I am just being dramatic)
-
-Anyway, this is how you make a table using Markdown:
-
-
-This | is | a | table | header
---- | --- | --- | --- | ---
-Humus | crackers| Brie cheese|mini carrots| ice cream
-1 | 2 | 3 | 4|5
+Data description: 
+Data was obtained from a retrospective observational cohort study carried along by Fernández Moro et. al (2016) and found [here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0166067#sec005).
+It contains data from patients with adenocarcinoma arising in the pancreatobiliary system who underwent diagnostic core needle biopsy or surgical resection.
+Patients were diagnosed between years 2002–2013 and followed until August 2016. 
