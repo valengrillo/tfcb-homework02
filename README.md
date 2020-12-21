@@ -6,7 +6,7 @@ Data was obtained from Fernández Moro et. al (2016) and found [here](https://jo
 Data contains immunohistochemical information from patients with adenocarcinoma arising in the pancreatobiliary system who underwent diagnostic core needle biopsy or surgical resection.
 Tumors are classified based on their anatomical localization,in accordance to the he 7th edition of the American Joint Committee on Cancer (AJCC)–Union for International Cancer Control (UICC) tumor node metastasis (TNM) classification:
 
-Tumor classes are: 
+Anatomical tumor classes are: 
 
 - ampullary carcinoma (n=24)
 - ductal pancreatic adenocarcinoma (n=143)
@@ -22,7 +22,7 @@ Each marker column contains a continuous numeric score (from 1 to 100) based on 
 The final 27 immunohischemical markers used were:  ck5, ck7, ck17, ck18, ck19, ck20, vim, muc1, muc2, muc5ac, muc6, berep4, ema, mcea, pcea, ca125, ca19.9,    
 maspin, wt1cyt, cdx2, p53, p63, ki67, chra, cd56, cd10.  
 
-Prunned and imputed data can be found in'imputed_data.cvs'
+Prunned and imputed data can be found in ![here](https://github.com/valengrillo/tfcb-homework08/blob/main/data/tidy/imputed_data.csv)
 
 The type of probes taken for immonohistochemical profiling , i.e. needle biopsy (labeled as 'b') or surgical resection (labeled as 'r'), was found in another dataset named  'pcbil_clinicaldata.cvs'. 
 A recommendation for easing future analysis with this data would be having the type of probe included in the same immunomarker scores.
@@ -36,7 +36,7 @@ I assummed the 'pad' column represented the samples names, and so I merged both 
 A Principal Component Analysis (PCA) was used because it allows me to organize my data into groups, or clusters, on the basis of how closely associated they are. Different tumors types are expected to have different immunohistochemical markers and percentages of stained tumor cells,
 and thus, are expected to cluster separately. I performed a PCA to make sure the selected list of immunohistochemical markers is comprehensive enough to correctly separate broadly distinct anatomycal tumor types.
 The resulting PCA plot shows an admixture of all pancreatic and biliary anatomical tumor types and clustering tendency for hepatocellular carcinoma (the control group). This indicates that the pannel of immunomarkers can correctly separate distinct anatomycal tumor types
-(i.e. it is not biased for the adenocarcinomas of the pancreobiliary system)
+(i.e. it is not biased for the adenocarcinomas of the pancreobiliary system). 
 
 ![image1](https://github.com/valengrillo/tfcb-homework08/blob/main/data/byanatomicalmarkers.png)
 
@@ -48,5 +48,7 @@ Instead, figure 2 shows an admixture of probe types throughout the entire plot, 
 
 ![image2](https://github.com/valengrillo/tfcb-homework08/blob/main/data/byprobe.png)
 
-## Reproducibility
+## Reproducibility:
+
+
 
