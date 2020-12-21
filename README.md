@@ -35,11 +35,13 @@ I assummed the 'pad' column represented the samples names, and so I merged both 
 A Principal Component Analysis (PCA) was used because it allows me to organize my data into groups, or clusters, on the basis of how closely associated they are.
 If selected
 
-!(/data/byanatomicalmarkers.png)
+!(https://github.com/valengrillo/tfcb-homework08/blob/main/data/byanatomicalmarkers.png)
 
 
 ### 2)Does the type of sample probe influences the immunohistochemical profiles?
 
 A PCA analysis was used for the same reason as question 1. If the type of probe influences the immonohistochemical readout, then two clusters corresponding to each probe were expected.
 Instead, figure 2 shows an admixture of probe types throughout the entire plot, disregarding sample's probe type as a counfounding factor.
+
+Reproducibility
 
