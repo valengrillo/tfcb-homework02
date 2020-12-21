@@ -1,0 +1,186 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Immunoprofiling of adenocarcinomas of the pancreatobiliary system
+=================================================================
+Analysis of missing data & imputation
+=================================================================
+
+Import required packages
+```{r}
+# Build pre-requisites
+#install.packages("plyr")
+#BiocManager::install("impute") 
+
+
+library(plyr)
+library(impute)
+
+
+```
+
+
+Setting relative paths to import and export directories
+```{r}
+
+myWorkDirectory <- "~/tfcb-homework08/data/"
+rawDataFileName <- paste(myWorkDirectory, "raw/pcbil_raw.csv", sep="")
+imputedDataFileName <- paste(myWorkDirectory, "tidy/imputed_data.csv", sep="")
+
+
+```
+ 
+
+Importing raw dataset and changing "?" values to NA
+
+```{r}
+
+RawData <- read.csv(file = rawDataFileName, row.names = 39, colClasses= c(rep("numeric",38), rep("character",2)), na.strings = "?",quote="'" )
+```
+
+Creating working dataset for processing
+
+```{r}
+ProcessData <- RawData
+```
+
+Process column names 
+```{r}
+names(ProcessData) <- tolower(names(ProcessData)) #Converts column names to lowercase
+names(ProcessData)[39] <- "clinical_diagnosis" #Names column 39 as 'clinical diagnosis'
+#converts each element in the 'clinical_diagnosis' column to factors
+ProcessData$clinical_diagnosis <- as.factor(ProcessData$clinical_diagnosis)
+
+```
+
+
+
+Rename the clinical diagnosis with the correct AJCC/IUCC-TNM 7 nomenclature
+
+```{r}
+
+revalue(ProcessData$clinical_diagnosis, c("Ampulla Ac" = "Ampullary carcinoma")) -> ProcessData$clinical_diagnosis
+revalue(ProcessData$clinical_diagnosis, c("Distal Bile Duct Ac" = "Distal bile duct cancer")) -> ProcessData$clinical_diagnosis
+revalue(ProcessData$clinical_diagnosis, c("Gallbladder Ac" = "Gallbladder cancer")) -> ProcessData$clinical_diagnosis
+revalue(ProcessData$clinical_diagnosis, c("Hepatocellular Cancer" = "Hepatocellular carcinoma")) -> ProcessData$clinical_diagnosis
+revalue(ProcessData$clinical_diagnosis, c("Intrahepatic Cholangiocarcinoma" = "Intrahepatic cholangiocarcinoma")) -> ProcessData$clinical_diagnosis
+revalue(ProcessData$clinical_diagnosis, c("Pancreas Ac" = "Ductal pancreatic adenocarcinoma")) -> ProcessData$clinical_diagnosis
+revalue(ProcessData$clinical_diagnosis, c("Perihilary Ac" = "Perihilar cholangiocarcinoma")) -> ProcessData$clinical_diagnosis
+```
+
+
+Fix labels and print a raw dataset summary
+```{r}
+
+#Fix one incorrect anatomical-based diagnosis (according to the authors data analysis)
+
+ProcessData[rownames(ProcessData) == "Intrahepatic Cholangiocarcinoma|366" , "clinical_diagnosis"] <- "Gallbladder cancer"
+
+#Lets observe the composition of the raw dataset by atanomical-based diagnosis
+
+table(ProcessData$clinical_diagnosis)
+
+```
+
+Calculate the proportion of missing values (NA) for each immunohistochemical marker
+```{r}
+ 
+
+#"missingprop" fucntion takes a dataframe as an input, and returns a matrix containing the number of NA values, the length of the column and the proportion of NA entries 
+  
+missingprop <- function(dataframe){
+  m <- sapply(dataframe, function(x){
+    data.frame(nmiss=sum(is.na(x)), n=length(x), missingprop=round(sum(is.na(x))/length(x),2))
+  })
+  return(m)
+}
+  
+
+
+#Takes the matrix output from calling the 'missingprop' function and transposes its rows and columns.
+#Then it builds a data frame with each of the matrix's columns. Then it unlists each atomic component occurring in each columns (which are thus far lists).
+#Finally, every column is coerced into 'na.probs' data frame 
+
+na.probs<-as.data.frame(sapply(data.frame(t(missingprop(ProcessData))), unlist))
+na.probs
+```
+
+Remove immunohistochemical markers with > 40% missing values:
+```{r}
+
+library("dplyr")
+na.probs %>% filter(missingprop <0.4) %>%
+#Reassigns back to 'na.probs' 
+{.} -> na.probs
+
+markers<-row.names(na.probs)
+
+
+ProcessData %>% select(all_of(markers))%>% 
+{.} -> ProcessData
+
+```
+
+
+Calculate the proportion of missing values (NA) for each cancer sample:
+
+```{r}
+
+#"missvalperrow" function takes a dataframe as an input, and returns a matrix containing the number of NA values per row, the length of the row and the proportion of NA entries per row
+
+missvalperrow<-function(dataframe) {
+  m2 <- apply(dataframe, 1, function(x){
+    c(nmiss=sum(is.na(x)), n=length(x), missingprop=round(sum(is.na(x))/length(x),3))
+  })
+  return(m2)
+}
+
+#Takes the matrix output from calling the 'missvalperrow' function and transposes its rows and columns.
+#Then it builds a data frame with each of the matrix's columns, and unlists each component occurring in each columns (which are thus far lists).
+#Finally, every column is coerced into 'na.rows.prob' data frame 
+
+na.rows.prob<-as.data.frame(sapply(data.frame(t(missvalperrow(ProcessData))), unlist))
+
+```
+
+Combine columns with the NA valued for each cancer sample, with the previously markers-trimmed data frame
+```{r}
+
+missrows<- data.frame(ProcessData,na.rows.prob)
+
+```
+
+Remove cancer samples with > 50% missing values:
+```{r}
+
+
+missrows %>% filter(missingprop <0.5) %>%
+#Reassigns back to 'missrows' 
+{.} -> missrows
+
+
+#For imputation of missing immunohistochemical markers, remove columns without immunohistochemical markers info or/and numeric data types 
+trimmedds<-missrows[1:26]
+
+```
+
+
+KNN-based imputation of remaining missing values
+```{r}
+
+#Impute NA entries
+MatrixImputed <- impute.knn(as.matrix((trimmedds)))
+DataImputed <- as.data.frame(MatrixImputed$data)
+
+#Add back the 'clinical_diagnosis' column that was removed previous to imputation
+DataImputed$clinical_diagnosis <- missrows$clinical_diagnosis
+```
+
+Save imputed data set in 'tidy' directory
+```{r}
+
+write.csv(DataImputed, imputedDataFileName, row.names=F, na="")
+
+```
