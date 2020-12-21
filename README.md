@@ -35,7 +35,7 @@ I assummed the 'pad' column represented the samples names, and so I merged both 
 A Principal Component Analysis (PCA) was used because it allows me to organize my data into groups, or clusters, on the basis of how closely associated they are.
 If selected
 
-!(https://github.com/valengrillo/tfcb-homework08/blob/main/data/byanatomicalmarkers.png)
+![image1](https://github.com/valengrillo/tfcb-homework08/blob/main/data/byanatomicalmarkers.png)
 
 
 ### 2)Does the type of sample probe influences the immunohistochemical profiles?
