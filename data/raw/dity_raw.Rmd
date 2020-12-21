@@ -1,12 +1,7 @@
 ---
-title: "R Notebook"
+title: "Immunoprofiling of adenocarcinomas of the pancreatobiliary system: Analysis of missing data & imputation"
 output: html_notebook
 ---
-
-Immunoprofiling of adenocarcinomas of the pancreatobiliary system
-=================================================================
-Analysis of missing data & imputation
-=================================================================
 
 Import required packages
 ```{r}
