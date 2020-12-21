@@ -1,6 +1,6 @@
-# Immunohistochemical profiles of Adenocarcinomas of the Pancreatobiliary System diverges from Anatomical diagnosi
+# Immunohistochemical profiles of Adenocarcinomas of the Pancreatobiliary System diverges from Anatomical
 
-##About the data:
+## About the data:
  
 Data was obtained from Fernández Moro et. al (2016) and found [here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0166067#sec005).
 Data contains immunohistochemical information from patients with adenocarcinoma arising in the pancreatobiliary system who underwent diagnostic core needle biopsy or surgical resection.
@@ -28,15 +28,15 @@ A recommendation for easing future analysis with this data would be having the t
 Also, samples names could be simplified with a numeric ID, instead naming them as a combination of clinical classification (for which a column exists- 'clinical_dagnosis') and a identifier number. 
 I assummed the 'pad' column represented the samples names, and so I merged both datasets based on it.   
 
-##Questions:
+## Questions:
 
-###1) Do selected immunohistochemical markers are biased for the pancreatic and biliary tumors?
+### 1) Do selected immunohistochemical markers are biased for the pancreatic and biliary tumors?
 
 A Principal Component Analysis (PCA) was used because it allows me to organize my data into groups, or clusters, on the basis of how closely associated they are.
 If selected
 
 
-###2)Does the type of sample probe influences the immunohistochemical profiles?
+### 2)Does the type of sample probe influences the immunohistochemical profiles?
 
 A PCA analysis was used for the same reason as question 1. If the type of probe influences the immonohistochemical readout, then two clusters corresponding to each probe were expected.
 Instead, figure 2 shows an admixture of probe types throughout the entire plot, disregarding sample's probe type as a counfounding factor.
