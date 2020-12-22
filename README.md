@@ -24,10 +24,10 @@ maspin, wt1cyt, cdx2, p53, p63, ki67, chra, cd56, cd10.
 
 Prunned and imputed data can be found in ![here](https://github.com/valengrillo/tfcb-homework08/blob/main/data/tidy/imputed_data.csv)
 
-The type of probes taken for immonohistochemical profiling , i.e. needle biopsy (labeled as 'b') or surgical resection (labeled as 'r'), was found in another dataset named  'pcbil_clinicaldata.cvs'. 
+The type of probes taken for immonohistochemical profiling , i.e. needle biopsy (labeled as 'b') or surgical resection (labeled as 'r'), was found in another dataset named  'pcbil_clinicaldata.csv'. 
 A recommendation for easing future analysis with this data would be having the type of probe included in the same immunomarker scores dataset.
 Also, samples names could be simplified with a numeric ID, instead naming them as a combination of clinical classification (for which a column exists- 'clinical_dagnosis') and a identifier number. 
-I assummed the 'pad' column represented the samples names, and so I merged both datasets based on it.   
+I assummed the 'pad' column represented the samples names, and so I merged both datasets based on it (the only containing the immunomarker scores 'pcbil_raw.csv', and the one with the types of probes 'pcbil_clinicaldata.csv')    
 
 ## Questions:
 
