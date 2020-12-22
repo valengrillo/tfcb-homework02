@@ -53,7 +53,9 @@ Instead, figure 2 shows an admixture of probe types throughout the entire plot, 
 Cleaning of data followed the same steps as Fernández Moro et. al (2016). First, they filter out every column missing more than 40% of it values. Second, they filtered out every row missing more than 50% of its data. Finally
 they imputed remaining missing values. Yet, my resulting prunned dataframe differed from Fernández Moro's in its dimensions. This is because they first analyzed the number of missing values both for column and rows, and then selected for columns and rows satisfying
 the conditions. However this is redundant, because an increase in the proportion of missing values per row might be caused by a generalized incomplete data of a certain immunomarker.
-Thus, I first analyzed and filtered out missing values by columns, and later analyzed and filtered out rows. 
+Thus, I first analyzed and filtered out missing values by columns, and later analyzed and filtered out rows. Our resulting data frame kept the same markers  as Fernández Moro's, but had 417 tumor samples instead of 409.
+
+ As for the 
 
 
 
