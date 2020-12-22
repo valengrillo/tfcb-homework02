@@ -3,7 +3,7 @@
 ## About the data:
  
 Data was obtained from Fernández Moro et. al (2016) and found [here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0166067#sec005).
-Data contains immunohistochemical information from patients with adenocarcinoma arising in the pancreatobiliary system who underwent diagnostic core needle biopsy or surgical resection.
+The raw dataset comprises 439 tumor samples and 38 immunohistochemical markers.Data contains immunohistochemical information from patients with adenocarcinoma arising in the pancreatobiliary system who underwent diagnostic core needle biopsy or surgical resection.
 Tumors are classified based on their anatomical localization,in accordance to the he 7th edition of the American Joint Committee on Cancer (AJCC)–Union for International Cancer Control (UICC) tumor node metastasis (TNM) classification:
 
 Anatomical tumor classes are: 
@@ -49,6 +49,11 @@ Instead, figure 2 shows an admixture of probe types throughout the entire plot, 
 ![image2](https://github.com/valengrillo/tfcb-homework08/blob/main/data/byprobe.png)
 
 ## Reproducibility:
+
+Cleaning of data followed most as the same steps as Fernández Moro et. al (2016). First, they filter out every column missing more than 40% of it values. Second, they filtered out every row missing more than 50% of its data. Finally
+they imputed remaining missing values. Yet, my resulting prunned dataframe differed from Fernández Moro's in its dimensions. This is because they first analyzed the number of missing values both for column and rows, and then selected for columns and rows satisfying
+the conditions. However this is redundant, because an increase in the proportion of missing values per row might be caused by a generalized incomplete data of a certain immunomarker.
+Thus, I first analyzed and filtered out missing values by columns, and later analyzed and filtered out rows. 
 
 
 
