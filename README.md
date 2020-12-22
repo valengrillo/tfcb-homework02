@@ -19,7 +19,7 @@ Control samples are hepatocellular carcinoma (n=100) , a tumor type with a well-
 
 Each tumor sample was stained with a panel panel consisting of up to 38 antibodies, of which finally 26 were considered for the analysis, after pruning of missing data.
 Each marker column contains a continuous numeric score (from 1 to 100) based on the percentage of stained tumor cells. 
-The final 27 immunohischemical markers used were:  ck5, ck7, ck17, ck18, ck19, ck20, vim, muc1, muc2, muc5ac, muc6, berep4, ema, mcea, pcea, ca125, ca19.9,    
+The final 26 immunohischemical markers used were:  ck5, ck7, ck17, ck18, ck19, ck20, vim, muc1, muc2, muc5ac, muc6, berep4, ema, mcea, pcea, ca125, ca19.9,    
 maspin, wt1cyt, cdx2, p53, p63, ki67, chra, cd56, cd10.  
 
 Prunned and imputed data can be found in ![here](https://github.com/valengrillo/tfcb-homework08/blob/main/data/tidy/imputed_data.csv)
