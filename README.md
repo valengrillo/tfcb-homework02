@@ -25,7 +25,7 @@ maspin, wt1cyt, cdx2, p53, p63, ki67, chra, cd56, cd10.
 Prunned and imputed data can be found in ![here](https://github.com/valengrillo/tfcb-homework08/blob/main/data/tidy/imputed_data.csv)
 
 The type of probes taken for immonohistochemical profiling , i.e. needle biopsy (labeled as 'b') or surgical resection (labeled as 'r'), was found in another dataset named  'pcbil_clinicaldata.cvs'. 
-A recommendation for easing future analysis with this data would be having the type of probe included in the same immunomarker scores.
+A recommendation for easing future analysis with this data would be having the type of probe included in the same immunomarker scores dataset.
 Also, samples names could be simplified with a numeric ID, instead naming them as a combination of clinical classification (for which a column exists- 'clinical_dagnosis') and a identifier number. 
 I assummed the 'pad' column represented the samples names, and so I merged both datasets based on it.   
 
@@ -50,12 +50,12 @@ Instead, figure 2 shows an admixture of probe types throughout the entire plot, 
 
 ## Reproducibility:
 
-Cleaning of data followed the same steps as Fernández Moro et. al (2016). First, they filter out every column missing more than 40% of it values. Second, they filtered out every row missing more than 50% of its data. Finally
+Cleaning of raw data followed the same steps as Fernández Moro et. al (2016). First, they filtered out every column missing more than 40% of it values. Second, they filtered out every row missing more than 50% of its data. Finally
 they imputed remaining missing values. Yet, my resulting prunned dataframe differed from Fernández Moro's in its dimensions. This is because they first analyzed the number of missing values both for column and rows, and then selected for columns and rows satisfying
 the conditions. However this is redundant, because an increase in the proportion of missing values per row might be caused by a generalized incomplete data of a certain immunomarker.
 Thus, I first analyzed and filtered out missing values by columns, and later analyzed and filtered out rows. Our resulting data frame kept the same markers  as Fernández Moro's, but had 417 tumor samples instead of 409.
 
- As for the 
+ The quest 
 
 
 
