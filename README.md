@@ -55,7 +55,6 @@ they imputed remaining missing values. Yet, my resulting prunned dataframe diffe
 the conditions. However this is redundant, because an increase in the proportion of missing values per row might be caused by a generalized incomplete data of a certain immunomarker.
 Thus, I first analyzed and filtered out missing values by columns, and later analyzed and filtered out rows. Our resulting data frame kept the same markers  as Fernández Moro's, but had 417 tumor samples instead of 409.
 
- The quest 
-
-
-
+ The plots from question 1 and 2 led to the same conclusions as Fernández Moro et. al (2016) (Supplementary figure 1). However, they simplified the dataset before PCA analysis by replacing each data value (immunohistochemical score) by a binary constant
+(if the marker was analyzed or not). Yet, it is not clear if they used the raw data or the imputed data for this. I assumed they used the imputed dataset, and that entries with an immunohistochemical score of zero were kept as zeros, 
+while entries with scores equal or higher than one were replaced by ones.
